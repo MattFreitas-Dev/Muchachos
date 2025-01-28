@@ -126,10 +126,10 @@ public class HeroKnight : MonoBehaviour {
             m_timeSinceAttack = 0.0f;
         }
 
-        // Block
+        // AttackBlock
         else if (Input.GetMouseButtonDown(1) && !m_rolling)
         {
-            m_animator.SetTrigger("Block");
+            m_animator.SetTrigger("AttackBlock");
             m_animator.SetBool("IdleBlock", true);
         }
 

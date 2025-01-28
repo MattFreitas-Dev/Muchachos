@@ -332,8 +332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a10ce026538e64485a298e02be9e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isHit: 0
-  shieldZone: {fileID: 6990175887851506395}
 --- !u!1 &3106817021526601818
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,8 +345,8 @@ GameObject:
   - component: {fileID: 7654102299263802996}
   - component: {fileID: 8626291117013189479}
   - component: {fileID: 1713125906439619275}
-  - component: {fileID: 7748191167678233771}
   - component: {fileID: 2256545487219464465}
+  - component: {fileID: 7748191167678233771}
   - component: {fileID: 3956789011858788095}
   - component: {fileID: 7020058727401792121}
   m_Layer: 9
@@ -512,26 +510,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7748191167678233771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3106817021526601818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be5f3a7d3e5fa541899da2b750ae021, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walksSpeed: 10
-  airWalkSpeed: 8
-  _isFacingRight: 1
-  jumpImpulse: 8
-  comboTimer: 3
-  cdTimer: 0.5
-  comboTimerValue: 0
-  cdTimerValue: 0
 --- !u!114 &2256545487219464465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,6 +640,26 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7748191167678233771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3106817021526601818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be5f3a7d3e5fa541899da2b750ae021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walksSpeed: 10
+  airWalkSpeed: 8
+  _isFacingRight: 1
+  jumpImpulse: 8
+  comboTimer: 3
+  cdTimer: 0.5
+  comboTimerValue: 0
+  cdTimerValue: 0
 --- !u!114 &3956789011858788095
 MonoBehaviour:
   m_ObjectHideFlags: 0
