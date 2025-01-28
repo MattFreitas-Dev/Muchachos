@@ -8,11 +8,13 @@ public class GameOverScreen : MonoBehaviour
 {
     GameObject player;
 	GameObject retry;
+    Damageable invincible;
 	// Start is called before the first frame update
 	void Start()
     {
         player = GameObject.Find("Player_1_v0.2");
 		retry = GameObject.Find("Retry");
+        invincible = GameObject.Find("Player_1_v0.2").GetComponent<Damageable>();
 	}
 
     // Update is called once per frame
@@ -27,8 +29,8 @@ public class GameOverScreen : MonoBehaviour
     }
 
     public void SaintsBlessing()
-	{                
-        player.GetComponent<Animator>().SetTrigger(AnimationString.saint);
+	{        
+		player.GetComponent<Animator>().SetTrigger(AnimationString.saint);
         player.GetComponent<Animator>().SetBool(AnimationString.isAlive, true);
 
 		player.GetComponent<Damageable>()._health = player.GetComponent<Damageable>()._maxHealth;
@@ -37,6 +39,8 @@ public class GameOverScreen : MonoBehaviour
         player.GetComponent<Rigidbody2D>().simulated = true;
 		retry.GetComponent<Canvas>().enabled = false;
 		retry.GetComponent<Animator>().enabled = false;
+
+        invincible.isInvincible = true;
 		/*reference player|
          * retry animation|
          * 

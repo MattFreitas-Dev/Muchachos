@@ -18,15 +18,13 @@ public class P1v2_Movement : MonoBehaviour
     private float comboTimerValue, cdTimerValue;
     private int cc = 0;
 
-    public KnightInputs knightControls;
-
-	Vector2 moveInput;
+	private Vector2 moveInput;
 	Rigidbody2D rb;
     TouchingDirections touchingDirections;
 
 	//animations
 	private bool _isMoving = false;
-    Animator animator;	
+    Animator animator;
 
     public float CurrentMoveSpeed 
     { 
@@ -99,8 +97,6 @@ public class P1v2_Movement : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
 
-        knightControls = new KnightInputs();
-
 		//animation
 		animator = GetComponent<Animator>();
 	}
@@ -108,8 +104,8 @@ public class P1v2_Movement : MonoBehaviour
 	void Start()
     {
         cdTimerValue = 0f;
-        comboTimerValue = 0f;        
-    }
+        comboTimerValue = 0f;
+	}
 
     // Update is called once per frame
     void Update()
@@ -175,7 +171,7 @@ public class P1v2_Movement : MonoBehaviour
 			}			
 		}        
 	}
-    
+    /*
     public void OnBlock(InputAction.CallbackContext context)
     {
 		if (context.started & Keyboard.current[Key.Z].wasPressedThisFrame)
@@ -186,7 +182,7 @@ public class P1v2_Movement : MonoBehaviour
         {
 			animator.SetBool(AnimationString.blocking, false);
 		}
-	}
+	}*/
     /*public bool IsPressed()
     {
 
@@ -195,4 +191,10 @@ public class P1v2_Movement : MonoBehaviour
     {
         Debug.Log("Test");
 	}
+
+    public float AnimatorSpeed(float speed)
+    {
+        animator.speed = speed;
+        return animator.speed;
+    }
 }

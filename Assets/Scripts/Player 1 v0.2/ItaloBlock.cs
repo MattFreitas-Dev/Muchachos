@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class ItaloBlock : MonoBehaviour
@@ -16,6 +17,24 @@ public class ItaloBlock : MonoBehaviour
 
 	//My doings
 	private List<GameObject> enemies = new List<GameObject>();
+	float fScale = 1f;
+	int scale = 1;
+	Animator animator;
+	Damageable damageable;
+
+	private void Start()
+	{
+		Enemies = Enemies ? Enemies : transform.gameObject;
+
+		float someFloat = 42.7f;
+		int someInt = (int)Math.Round(someFloat);
+
+		fScale = transform.localScale.x;		
+		scale = (int)Math.Round(fScale);
+		animator = GetComponent<Animator>();
+		damageable = GetComponent<Damageable>();
+	}
+	//end of my doings
 
 	private void StartBlockWindow()
 	{
@@ -27,23 +46,82 @@ public class ItaloBlock : MonoBehaviour
 		isBlockWindowActive = false;
 		shouldUpdate = false;
 	}
-
-	/*private bool IsAttackBlocked(Transform source, out DirectionalInformation directionalInformation)
+	//mu doing
+	[field: SerializeField] public GameObject Enemies { get; private set; }
+	public void OnBlock2(InputAction.CallbackContext context)
 	{
-		var angleOfAttacker = AngleFromFacingDirection(Core.Root.transform,source,movement.FacingDirection);
+		if (context.started & Keyboard.current[Key.Z].wasPressedThisFrame)
+		{
+			animator.SetBool(AnimationString.blocking, true);
+			damageable.isInvincible = true;
+		}
+		else if (Keyboard.current[Key.Z].wasReleasedThisFrame)
+		{
+			animator.SetBool(AnimationString.blocking, false);
+			damageable.isInvincible = false;
+		}
+	}
+	//end
 
-		return currentAttackData.IsBlocked(angleOfAttacker, out directionalInformation);
-	}*/
+	[field: SerializeField] public DirectionalInformation[] BlockDirectionInformation { get; private set; }
+
+	private bool IsAttackBlocked(Transform source, out DirectionalInformation directionalInformation)
+	{
+		var angleOfAttacker = AngleFromFacingDirection(Enemies.transform,source, scale);
+
+		return IsBlocked(angleOfAttacker, out directionalInformation);
+	}
 
 	public static float AngleFromFacingDirection(Transform receiver, Transform source, int direction)
 	{
 		return Vector2.SignedAngle(Vector2.right * direction,
 			source.position - receiver.position) * direction;
 	}
-	private void Start()
+	
+
+	public bool IsBlocked(float angle, out DirectionalInformation directionalInformation)
 	{
-		Enemies = Enemies ? Enemies : transform.gameObject;
+		directionalInformation = null;
+
+		foreach (var directionInformation in BlockDirectionInformation)
+		{
+			var blocked = directionInformation.IsAngleBetween(angle);
+
+			if (!blocked)
+				continue;
+
+			directionalInformation = directionInformation;
+			return true;
+		}
+
+		return false;
 	}
 
-	public GameObject Enemies { get; private set; }
+	private void HandleModified(GameObject source)
+	{
+		animator.SetTrigger(AnimationString.blocked);
+
+		OnBlock?.Invoke(source);
+	}
+
+	private void Update()
+	{
+		if (!shouldUpdate || !IsPastTriggerTime())
+			return;
+
+		if (isBlockWindowActive)
+		{
+			StopBlockWindow();
+		}
+		else
+		{
+			StartBlockWindow();
+		}
+
+	}
+
+	private bool IsPastTriggerTime()
+	{
+		return Time.time >= nextWindowTriggerTime;
+	}
 }

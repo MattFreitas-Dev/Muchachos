@@ -54,7 +54,7 @@ public class Damageable : MonoBehaviour
     [SerializeField]
     public bool _isAlive = true;
 	[SerializeField]
-	private bool isInvincible;
+	public bool isInvincible;
 
 	public float invicibilityTime = 0.5f;
 	private float timeSinceHit = 0f;
@@ -101,7 +101,7 @@ public class Damageable : MonoBehaviour
 			Health -= damage;
             isInvincible=true;
 
-            animator.SetTrigger(AnimationString.hit);
+			animator.SetTrigger(AnimationString.hit);
         }
     }
 }
