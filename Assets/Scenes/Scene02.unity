@@ -595,7 +595,7 @@ Transform:
   m_GameObject: {fileID: 225816919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0019140244, y: 1.5542011, z: -10}
+  m_LocalPosition: {x: -0.0019140244, y: 1.5541143, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33606,7 +33606,7 @@ PrefabInstance:
     - target: {fileID: 2256545487219464465, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4939455991920946518}
+      objectReference: {fileID: 4939455991920946528}
     - target: {fileID: 2256545487219464465, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -33621,7 +33621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2256545487219464465, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnBlock2
+      value: OnBlock
       objectReference: {fileID: 0}
     - target: {fileID: 2256545487219464465, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -33629,7 +33629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2256545487219464465, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ItaloBlock, Assembly-CSharp
+      value: Block, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2256545487219464465, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -33646,6 +33646,10 @@ PrefabInstance:
     - target: {fileID: 3106817021526601818, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
       propertyPath: m_Name
       value: Player_1_v0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090686200552916401, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4090686200552916401, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
       propertyPath: <Enemies>k__BackingField
@@ -33711,6 +33715,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8762197327247157149, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
+      propertyPath: MaxAngle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762197327247157149, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
+      propertyPath: MinAngle
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762197327247157149, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3055659637666716155, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
     - {fileID: 225412239517954128, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
@@ -33735,15 +33751,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be5f3a7d3e5fa541899da2b750ae021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4939455991920946518 stripped
+--- !u!114 &4939455991920946528 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4090686200552916401, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8762197327247157149, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
   m_PrefabInstance: {fileID: 4939455991920946506}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fc6e4bdce655047a7e1e8cb42f59d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fc6f4f75f0a9e044a474c78c6aefa34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6953482605442121279

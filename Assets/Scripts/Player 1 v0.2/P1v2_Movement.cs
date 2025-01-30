@@ -171,18 +171,18 @@ public class P1v2_Movement : MonoBehaviour
 			}			
 		}        
 	}
-    /*
-    public void OnBlock(InputAction.CallbackContext context)
-    {
-		if (context.started & Keyboard.current[Key.Z].wasPressedThisFrame)
-        {
-            animator.SetBool(AnimationString.blocking, true);
-        }
-        else if (Keyboard.current[Key.Z].wasReleasedThisFrame)
-        {
-			animator.SetBool(AnimationString.blocking, false);
-		}
-	}*/
+    
+ //   public void OnBlock(InputAction.CallbackContext context)
+ //   {
+	//	if (context.started & Keyboard.current[Key.Z].wasPressedThisFrame)
+ //       {
+ //           animator.SetBool(AnimationString.blocking, true);
+ //       }
+ //       else if (Keyboard.current[Key.Z].wasReleasedThisFrame)
+ //       {
+	//		animator.SetBool(AnimationString.blocking, false);
+	//	}
+	//}
     /*public bool IsPressed()
     {
 

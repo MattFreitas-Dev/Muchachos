@@ -23,16 +23,14 @@ public class ItaloBlock : MonoBehaviour
 	Damageable damageable;
 
 	private void Start()
-	{
-		Enemies = Enemies ? Enemies : transform.gameObject;
-
-		float someFloat = 42.7f;
-		int someInt = (int)Math.Round(someFloat);
-
-		fScale = transform.localScale.x;		
-		scale = (int)Math.Round(fScale);
+	{		
 		animator = GetComponent<Animator>();
 		damageable = GetComponent<Damageable>();
+
+		Enemies = Enemies ? Enemies : transform.gameObject;
+
+		fScale = transform.localScale.x;
+		scale = (int)Math.Round(fScale);
 	}
 	//end of my doings
 
@@ -67,7 +65,7 @@ public class ItaloBlock : MonoBehaviour
 
 	private bool IsAttackBlocked(Transform source, out DirectionalInformation directionalInformation)
 	{
-		var angleOfAttacker = AngleFromFacingDirection(Enemies.transform,source, scale);
+		var angleOfAttacker = AngleFromFacingDirection(transform,source, scale);
 
 		return IsBlocked(angleOfAttacker, out directionalInformation);
 	}
@@ -96,13 +94,7 @@ public class ItaloBlock : MonoBehaviour
 
 		return false;
 	}
-
-	private void HandleModified(GameObject source)
-	{
-		animator.SetTrigger(AnimationString.blocked);
-
-		OnBlock?.Invoke(source);
-	}
+		
 
 	private void Update()
 	{

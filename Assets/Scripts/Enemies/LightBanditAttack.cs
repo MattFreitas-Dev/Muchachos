@@ -11,18 +11,7 @@ public class LightBanditAttack : MonoBehaviour
 	{
 		atkcColl = GetComponent<Collider2D>();
 	}
-	// Start is called before the first frame update
-	void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+	
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		Damageable damageable = collision.GetComponent<Damageable>();

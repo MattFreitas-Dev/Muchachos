@@ -8,9 +8,9 @@ public class DirectionalInformation : MonoBehaviour
 {
 	[Range(-180f, 180f)] public float MinAngle;
 	[Range(-180f, 180f)] public float MaxAngle;
-	[Range(0f, 1f)] public float DamageAbsorption;
-	[Range(0f, 1f)] public float KnockBackAbsorption;
-	[Range(0f, 1f)] public float PoiseDamageAbsorption;
+	//[Range(0f, 1f)] public float DamageAbsorption;
+	//[Range(0f, 1f)] public float KnockBackAbsorption;
+	//[Range(0f, 1f)] public float PoiseDamageAbsorption;
 
 	public bool IsAngleBetween(float angle)
 	{

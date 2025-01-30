@@ -327,7 +327,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235773541727493734}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a10ce026538e64485a298e02be9e65, type: 3}
   m_Name: 
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 7748191167678233771}
   - component: {fileID: 3956789011858788095}
   - component: {fileID: 7020058727401792121}
-  - component: {fileID: 4090686200552916401}
+  - component: {fileID: 8762197327247157149}
   m_Layer: 9
   m_Name: Player_1_v0.2
   m_TagString: Player
@@ -710,7 +710,7 @@ MonoBehaviour:
   _isAlive: 1
   isInvincible: 0
   invicibilityTime: 0.25
---- !u!114 &4090686200552916401
+--- !u!114 &8762197327247157149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -719,9 +719,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3106817021526601818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fc6e4bdce655047a7e1e8cb42f59d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fc6f4f75f0a9e044a474c78c6aefa34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &3790169151256810896
 GameObject:
   m_ObjectHideFlags: 0
