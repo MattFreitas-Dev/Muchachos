@@ -33567,6 +33567,10 @@ PrefabInstance:
       propertyPath: shieldZone
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1235773541727493734, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2256545487219464465, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 16
