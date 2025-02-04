@@ -8,7 +8,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class ItaloBlock : MonoBehaviour
 {
 	// Event fired off when an attack is blocked. The parameter is the GameObject of the entity that was blocked
-	public event Action<GameObject> OnBlock;
+	//public event Action<GameObject> OnBlock;
 
 	private bool isBlockWindowActive;
 	private bool shouldUpdate;

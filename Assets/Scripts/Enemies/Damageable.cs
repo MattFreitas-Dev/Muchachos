@@ -11,6 +11,7 @@ public class Damageable : MonoBehaviour
     Collider2D col;
     Rigidbody2D rb;
     InstantDeath id;
+    ShieldScript shield;
     
     [SerializeField]
     public float _maxHealth = 100f;
@@ -76,6 +77,7 @@ public class Damageable : MonoBehaviour
         col = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
 		id = GameObject.FindObjectOfType(typeof(InstantDeath)) as InstantDeath;
+        shield = GetComponentInChildren<ShieldScript>();
 	}
 
 	private void Start()
@@ -96,10 +98,11 @@ public class Damageable : MonoBehaviour
 	}
 	public void Hit(float damage)
     {
-        if(IsAlive && !isInvincible)
+        if(IsAlive && !isInvincible && shield.attackBlocked==false)
         {
 			Health -= damage;
-            isInvincible=true;
+            if(gameObject.tag == "Player")
+                isInvincible=true;
 
 			animator.SetTrigger(AnimationString.hit);
         }

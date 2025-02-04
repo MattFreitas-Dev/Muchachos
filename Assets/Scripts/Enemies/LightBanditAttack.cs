@@ -11,7 +11,7 @@ public class LightBanditAttack : MonoBehaviour
 	{
 		atkcColl = GetComponent<Collider2D>();
 	}
-	
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		Damageable damageable = collision.GetComponent<Damageable>();
