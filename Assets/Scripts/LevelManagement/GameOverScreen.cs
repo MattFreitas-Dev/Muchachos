@@ -29,12 +29,13 @@ public class GameOverScreen : MonoBehaviour
     }
 
     public void SaintsBlessing()
-	{        
+	{
+        player.GetComponent<Animator>().ResetTrigger(AnimationString.hit);
 		player.GetComponent<Animator>().SetTrigger(AnimationString.saint);
-        player.GetComponent<Animator>().SetBool(AnimationString.isAlive, true);
 
-		player.GetComponent<Damageable>()._health = player.GetComponent<Damageable>()._maxHealth;
         player.GetComponent<Damageable>()._isAlive = true;
+		player.GetComponent<Damageable>()._health = player.GetComponent<Damageable>()._maxHealth;
+        player.GetComponent<Animator>().SetBool(AnimationString.isAlive, true);
         player.GetComponent<Collider2D>().enabled = true;
         player.GetComponent<Rigidbody2D>().simulated = true;
 		retry.GetComponent<Canvas>().enabled = false;

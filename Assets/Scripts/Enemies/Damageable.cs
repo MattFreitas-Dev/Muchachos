@@ -98,13 +98,26 @@ public class Damageable : MonoBehaviour
 	}
 	public void Hit(float damage)
     {
-        if(IsAlive && !isInvincible && shield.attackBlocked==false)
+        if(IsAlive)
         {
-			Health -= damage;
-            if(gameObject.tag == "Player")
-                isInvincible=true;
-
-			animator.SetTrigger(AnimationString.hit);
-        }
+			if (gameObject.tag == "Player")
+            {
+                if(!isInvincible && shield.isBlocking == false)
+                {
+					Health -= damage;
+                    isInvincible=true;
+					animator.SetTrigger(AnimationString.hit);
+				}
+				else if (IsAlive && !isInvincible && shield.isBlocking == true)
+				{
+					animator.SetTrigger(AnimationString.blocked);
+				}
+			}
+            if(gameObject.tag == "Enemy")
+            {
+				Health -= damage;
+				animator.SetTrigger(AnimationString.hit);
+			}			
+        }        
     }
 }

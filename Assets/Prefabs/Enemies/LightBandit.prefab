@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 695484543990898738}
   m_Layer: 12
   m_Name: SwordAttack
-  m_TagString: Untagged
+  m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4474816773898941528
 Transform:
   m_ObjectHideFlags: 0
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackZone: {fileID: 1586318197975799468}
   cliffDetection: {fileID: 1232949320762603565}
-  walkSpeed: 5
+  walkSpeed: 4
   walkStopRate: 0.5
   _hasTarget: 0
 --- !u!114 &8156626021389146495
@@ -428,7 +428,7 @@ MonoBehaviour:
   _maxHealth: 20
   _health: 100
   _isAlive: 1
-  isInvincible: 0
+  isInvincible: 1
   invicibilityTime: 0
 --- !u!1 &7731760936867916234
 GameObject:
