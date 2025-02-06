@@ -7,7 +7,7 @@ public class BackgroundController : MonoBehaviour
     private float startPos, lenght;
     public GameObject cam;
     public float parallaxEffect;
-    public bool parallaxTrue = true;
+    public bool repeteTrue = true;
 
 	// Start is called before the first frame update
 	void Start()
@@ -25,7 +25,7 @@ public class BackgroundController : MonoBehaviour
 
         transform.position = new Vector2 (startPos + distance, transform.position.y);
 
-        if (parallaxTrue)
+        if (repeteTrue)
         {
 			ParallaxEffect(movement);
 		}
