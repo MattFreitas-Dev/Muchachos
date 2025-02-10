@@ -21,7 +21,7 @@ public class CamTurnScript : MonoBehaviour
     void FixedUpdate()
     {
 		float step = speed * Time.deltaTime;
-		//Mathf.Lerp(transform.position.x, player.transform.position.x + 3, 0.5f);
+		//Mathf.Lerp(myTransform.position.x, player.myTransform.position.x + 3, 0.5f);
 		if (player.localScale.x == 0)
         {
 			transform.position = transform.position;
@@ -29,16 +29,16 @@ public class CamTurnScript : MonoBehaviour
         else if (player.localScale.x > 0)
         {
 			transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x + xDamping, player.position.y + yDamping, player.position.z), step);
-			//gameObject.transform.position = new Vector2(player.position.x + 3, player.position.y + 2);
+			//gameObject.myTransform.position = new Vector2(player.position.x + 3, player.position.y + 2);
         }
         else if (player.localScale.x < 0)
         {
 			transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x - xDamping, player.position.y + yDamping, player.position.z), step);
-			//gameObject.transform.position = new Vector2(player.position.x - 3, player.position.y + 2);
+			//gameObject.myTransform.position = new Vector2(player.position.x - 3, player.position.y + 2);
         }
   //      if(rb.velocity.y < 0 || rb.velocity.y > 0)
   //      {
-		//	transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, player.position.y, player.position.z), step);
+		//	myTransform.position = Vector3.MoveTowards(myTransform.position, new Vector3(player.position.x, player.position.y, player.position.z), step);
 		//}
 	}
 }

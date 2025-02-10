@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3558080627080440706}
   - component: {fileID: 3358909726675061244}
   - component: {fileID: 1512789339598528709}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InstantDeath
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 6207448287593768535}
   - component: {fileID: 749797275511393280}
   - component: {fileID: 4069567618846297078}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 240909166916369663}
   - component: {fileID: 7547713137513200166}
   - component: {fileID: 5792400135320562508}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

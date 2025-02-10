@@ -11,15 +11,18 @@ public class LightBanditScript : MonoBehaviour
 	TouchingDirections touchingDirections;
 	public DetectionZone attackZone;
 	public DetectionZone cliffDetection;
+	String walkDirection = "right";
 
 	private bool _isMoving = false;
 	public float walkSpeed = 5f;
 	public float walkStopRate = 0.5f;
+	[SerializeField]
 	public enum WalkableDirection { Right, Left};
-
+	[SerializeField]
 	private WalkableDirection _walkDirection;
+	[SerializeField]
 	private Vector2 walkDirectionVector = Vector2.right;
-
+	[SerializeField]
 	public WalkableDirection WalkDirection
 	{
 		get { return _walkDirection;}
@@ -95,6 +98,10 @@ public class LightBanditScript : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
 		touchingDirections = GetComponent<TouchingDirections>();
+	}
+	private void Start()
+	{
+		walkDirectionVector = new Vector2(gameObject.transform.localScale.x, gameObject.transform.localScale.y);
 	}
 
 	private void FlipDirection()

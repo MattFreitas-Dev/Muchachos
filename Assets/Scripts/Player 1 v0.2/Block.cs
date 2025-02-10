@@ -28,7 +28,7 @@ public class Block : MonoBehaviour
 				
 			}
 
-			//var angleOfAttacker = AngleFromFacingDirection(transform, )
+			//var angleOfAttacker = AngleFromFacingDirection(myTransform, )
 		}
 		else if (Keyboard.current[Key.Z].wasReleasedThisFrame)
 		{
@@ -57,7 +57,7 @@ public class Block : MonoBehaviour
 	//RaycastHit2D[] enemyHits = new RaycastHit2D[5];
 	//public ContactFilter2D castFilter;
 	//public float enemyDistance = 5f;
-	//private Vector2 enemyCheckDirection => gameObject.transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+	//private Vector2 enemyCheckDirection => gameObject.myTransform.localScale.x > 0 ? Vector2.right : Vector2.left;
 	//[SerializeField] private bool _hasEnemy;
 	//public bool HasEnemy
 	//{
