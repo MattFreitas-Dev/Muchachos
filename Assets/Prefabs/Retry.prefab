@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 3824898181041160999}
   - component: {fileID: 6697651187865785159}
   - component: {fileID: 1807191862401610066}
-  - component: {fileID: 2477472697089870114}
+  - component: {fileID: 203494774008232462}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Text: '2
 
 '
---- !u!114 &2477472697089870114
+--- !u!114 &203494774008232462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blessCountText: {fileID: 1807191862401610066}
+  localBless: 0
 --- !u!1 &4660146898865041752
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blessCountText: {fileID: 7122398576512125261}
+  localBless: 0
 --- !u!1 &5024491439549922518
 GameObject:
   m_ObjectHideFlags: 0

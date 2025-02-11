@@ -10,15 +10,17 @@ public class GameOverScreen : MonoBehaviour
 	GameObject retry;
     Damageable invincible;
     Healthbar healthbar;
-    float playerHealth;
+	P1v2_Movement playerScript;
+    BlessingCountScript blessScript;
 	// Start is called before the first frame update
 	void Start()
     {
         player = GameObject.Find("Player_1_v0.2");
 		retry = GameObject.Find("Retry");
         invincible = GameObject.Find("Player_1_v0.2").GetComponent<Damageable>();
-        healthbar = FindObjectOfType<Healthbar>();
-        playerHealth = player.GetComponent<Damageable>()._health;
+        playerScript = GameObject.Find("Player_1_v0.2").GetComponent<P1v2_Movement>();
+		healthbar = FindObjectOfType<Healthbar>();
+        blessScript = FindObjectOfType<BlessingCountScript>();
 	}
 
     public void Retry()
@@ -35,13 +37,17 @@ public class GameOverScreen : MonoBehaviour
         player.GetComponent<Damageable>()._isAlive = true;
 		player.GetComponent<Damageable>()._health = player.GetComponent<Damageable>()._maxHealth;
 
-		healthbar.SetHealth(playerHealth); //UI
+        healthbar.SetHealth(player.GetComponent<Damageable>()._health); //UI
+        playerScript.blessings = playerScript.blessings -1;
+		
 
+
+		blessScript.UpdateText();
 		player.GetComponent<Animator>().SetBool(AnimationString.isAlive, true);
         player.GetComponent<Collider2D>().enabled = true;
         player.GetComponent<Rigidbody2D>().simulated = true;
 		retry.GetComponent<Canvas>().enabled = false;
-		retry.GetComponent<Animator>().enabled = false;
+		retry.GetComponent<Animator>().enabled = false;        
 
         invincible.isInvincible = true;
 		/*reference player|

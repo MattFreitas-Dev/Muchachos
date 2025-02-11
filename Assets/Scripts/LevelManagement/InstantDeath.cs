@@ -10,16 +10,15 @@ public class InstantDeath : MonoBehaviour
 	Animator animator;
 	GameObject retry;
 	BlessingCountScript BlessingCountScript;
-	P1v2_Movement playerScript;
-	int blessingsCount = 3;
+	P1v2_Movement playerBless;
 	// Start is called before the first frame update
 	void Start()
     {
         
 		animator = GetComponent<Animator>();
 		animator.enabled = false;		
-		retry = GameObject.Find("Retry");		
-		blessingsCount = playerScript.blessings;
+		retry = GameObject.Find("Retry");
+		playerBless = GameObject.Find("Player_1_v0.2").GetComponent<P1v2_Movement>();
 	}	
 
 	public void OnTriggerEnter2D(Collider2D collision)
@@ -45,13 +44,10 @@ public class InstantDeath : MonoBehaviour
 
 	public void DeathWait()
 	{
-		if (blessingsCount > 0)
+		if (playerBless.blessings > 0)
 		{
 			retry.GetComponent<Canvas>().enabled = true;
 			retry.GetComponent<Animator>().enabled = true;
-			blessingsCount--;
-			playerScript.blessings = blessingsCount;
-			BlessingCountScript.UpdateText();
 		}
 		else
 			SceneManager.LoadScene(3);
