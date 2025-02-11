@@ -11,18 +11,17 @@ public class LightBanditScript : MonoBehaviour
 	TouchingDirections touchingDirections;
 	public DetectionZone attackZone;
 	public DetectionZone cliffDetection;
-	String walkDirection = "right";
 
 	private bool _isMoving = false;
 	public float walkSpeed = 5f;
 	public float walkStopRate = 0.5f;
-	[SerializeField]
+	
 	public enum WalkableDirection { Right, Left};
-	[SerializeField]
+	
 	private WalkableDirection _walkDirection;
-	[SerializeField]
+	
 	private Vector2 walkDirectionVector = Vector2.right;
-	[SerializeField]
+	
 	public WalkableDirection WalkDirection
 	{
 		get { return _walkDirection;}

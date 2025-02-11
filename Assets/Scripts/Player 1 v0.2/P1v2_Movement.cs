@@ -17,6 +17,7 @@ public class P1v2_Movement : MonoBehaviour
     [SerializeField]
     private float comboTimerValue, cdTimerValue;
     private int cc = 0;
+    public int blessings = 3;
 
 	private Vector2 moveInput;
 	Rigidbody2D rb;

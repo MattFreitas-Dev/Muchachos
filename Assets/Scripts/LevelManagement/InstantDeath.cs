@@ -2,26 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class InstantDeath : MonoBehaviour
 {
     public int waitTime = 1;
 	Animator animator;
 	GameObject retry;
-    // Start is called before the first frame update
-    void Start()
+	BlessingCountScript BlessingCountScript;
+	P1v2_Movement playerScript;
+	int blessingsCount = 3;
+	// Start is called before the first frame update
+	void Start()
     {
         
 		animator = GetComponent<Animator>();
 		animator.enabled = false;		
-		retry = GameObject.Find("Retry");
-	}
-
-	// Update is called once per frame
-	void Update()
-    {
-        
-    }
+		retry = GameObject.Find("Retry");		
+		blessingsCount = playerScript.blessings;
+	}	
 
 	public void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -46,7 +45,16 @@ public class InstantDeath : MonoBehaviour
 
 	public void DeathWait()
 	{
-		retry.GetComponent<Canvas>().enabled = true;
-		retry.GetComponent<Animator>().enabled = true;
+		if (blessingsCount > 0)
+		{
+			retry.GetComponent<Canvas>().enabled = true;
+			retry.GetComponent<Animator>().enabled = true;
+			blessingsCount--;
+			playerScript.blessings = blessingsCount;
+			BlessingCountScript.UpdateText();
+		}
+		else
+			SceneManager.LoadScene(3);
+
 	}
 }

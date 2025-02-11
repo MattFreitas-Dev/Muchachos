@@ -9,19 +9,17 @@ public class GameOverScreen : MonoBehaviour
     GameObject player;
 	GameObject retry;
     Damageable invincible;
+    Healthbar healthbar;
+    float playerHealth;
 	// Start is called before the first frame update
 	void Start()
     {
         player = GameObject.Find("Player_1_v0.2");
 		retry = GameObject.Find("Retry");
         invincible = GameObject.Find("Player_1_v0.2").GetComponent<Damageable>();
+        healthbar = FindObjectOfType<Healthbar>();
+        playerHealth = player.GetComponent<Damageable>()._health;
 	}
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Retry()
     {
@@ -30,12 +28,16 @@ public class GameOverScreen : MonoBehaviour
 
     public void SaintsBlessing()
 	{
+        
         player.GetComponent<Animator>().ResetTrigger(AnimationString.hit);
-		player.GetComponent<Animator>().SetTrigger(AnimationString.saint);
+		player.GetComponent<Animator>().SetTrigger(AnimationString.saint);        
 
         player.GetComponent<Damageable>()._isAlive = true;
 		player.GetComponent<Damageable>()._health = player.GetComponent<Damageable>()._maxHealth;
-        player.GetComponent<Animator>().SetBool(AnimationString.isAlive, true);
+
+		healthbar.SetHealth(playerHealth); //UI
+
+		player.GetComponent<Animator>().SetBool(AnimationString.isAlive, true);
         player.GetComponent<Collider2D>().enabled = true;
         player.GetComponent<Rigidbody2D>().simulated = true;
 		retry.GetComponent<Canvas>().enabled = false;

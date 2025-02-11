@@ -12,6 +12,7 @@ public class Damageable : MonoBehaviour
     Rigidbody2D rb;
     InstantDeath id;
     ShieldScript shield;
+    Healthbar healthbar;
     
     [SerializeField]
     public float _maxHealth = 100f;
@@ -78,11 +79,14 @@ public class Damageable : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 		id = GameObject.FindObjectOfType(typeof(InstantDeath)) as InstantDeath;
         shield = GetComponentInChildren<ShieldScript>();
+        healthbar = FindObjectOfType<Healthbar>();
 	}
 
 	private void Start()
 	{
 		_health = _maxHealth;
+        if (gameObject.tag == "Player")
+            healthbar.SetMaxHealth(_health, _maxHealth);
 	}
 	private void Update()
 	{
@@ -105,6 +109,7 @@ public class Damageable : MonoBehaviour
                 if(!isInvincible && shield.isBlocking == false)
                 {
 					Health -= damage;
+                    healthbar.SetHealth(_health);
                     isInvincible=true;
 					animator.SetTrigger(AnimationString.hit);
 				}
