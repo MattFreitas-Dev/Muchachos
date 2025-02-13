@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 1
-  sceneIndex: 0
+  sceneIndex: 2
 --- !u!95 &1532802572541680816
 Animator:
   serializedVersion: 5

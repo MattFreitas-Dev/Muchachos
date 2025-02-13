@@ -650,6 +650,7 @@ MonoBehaviour:
   cdTimer: 0.5
   comboTimerValue: 0
   cdTimerValue: 0
+  blessings: 3
 --- !u!114 &3956789011858788095
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI;
 
 public class GameOverScreen : MonoBehaviour
@@ -11,7 +13,8 @@ public class GameOverScreen : MonoBehaviour
     Damageable invincible;
     Healthbar healthbar;
 	P1v2_Movement playerScript;
-    BlessingCountScript blessScript;
+    BlessCount2 blessCount2;
+    BlessCount3 blessCount3;
 	// Start is called before the first frame update
 	void Start()
     {
@@ -20,7 +23,8 @@ public class GameOverScreen : MonoBehaviour
         invincible = GameObject.Find("Player_1_v0.2").GetComponent<Damageable>();
         playerScript = GameObject.Find("Player_1_v0.2").GetComponent<P1v2_Movement>();
 		healthbar = FindObjectOfType<Healthbar>();
-        blessScript = FindObjectOfType<BlessingCountScript>();
+        blessCount2 = FindObjectOfType<BlessCount2>();
+        blessCount3 = FindObjectOfType<BlessCount3>();
 	}
 
     public void Retry()
@@ -40,16 +44,17 @@ public class GameOverScreen : MonoBehaviour
         healthbar.SetHealth(player.GetComponent<Damageable>()._health); //UI
         playerScript.blessings = playerScript.blessings -1;
 		
-
-
-		blessScript.UpdateText();
 		player.GetComponent<Animator>().SetBool(AnimationString.isAlive, true);
         player.GetComponent<Collider2D>().enabled = true;
         player.GetComponent<Rigidbody2D>().simulated = true;
 		retry.GetComponent<Canvas>().enabled = false;
+        retry.GetComponentInChildren<UnityEngine.UI.Button>().enabled = false;
 		retry.GetComponent<Animator>().enabled = false;        
 
-        invincible.isInvincible = true;
+        blessCount2.UpdateText();
+		blessCount3.UpdateText();
+
+		invincible.isInvincible = true;
 		/*reference player|
          * retry animation|
          * 
