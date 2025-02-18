@@ -16,7 +16,26 @@ public class Damageable : MonoBehaviour
     
     [SerializeField]
     public float _maxHealth = 100f;
-    public float MaxHealth
+
+	private void Awake()
+	{
+		animator = GetComponent<Animator>();
+		col = GetComponent<Collider2D>();
+		rb = GetComponent<Rigidbody2D>();
+		id = FindObjectOfType(typeof(InstantDeath)) as InstantDeath;
+		shield = GetComponentInChildren<ShieldScript>();
+		healthbar = FindObjectOfType<Healthbar>();
+	}
+
+	private void Start()
+	{
+		_health = _maxHealth;
+		if (gameObject.tag == "Player")
+			healthbar.SetMaxHealth(_health, _maxHealth);
+	}
+
+
+	public float MaxHealth
     {
         get
         {
@@ -45,6 +64,7 @@ public class Damageable : MonoBehaviour
                 IsAlive = false;
                 col.enabled = false;
                 rb.simulated = false;
+                transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
                 if (gameObject.tag == "Player")
                 {
                     id.DeathOnCall();                    
@@ -72,22 +92,7 @@ public class Damageable : MonoBehaviour
         }
     }
 
-	private void Awake()
-	{
-		animator = GetComponent<Animator>();
-        col = GetComponent<Collider2D>();
-        rb = GetComponent<Rigidbody2D>();
-		id = GameObject.FindObjectOfType(typeof(InstantDeath)) as InstantDeath;
-        shield = GetComponentInChildren<ShieldScript>();
-        healthbar = FindObjectOfType<Healthbar>();
-	}
-
-	private void Start()
-	{
-		_health = _maxHealth;
-        if (gameObject.tag == "Player")
-            healthbar.SetMaxHealth(_health, _maxHealth);
-	}
+	
 	private void Update()
 	{
 		if(isInvincible)

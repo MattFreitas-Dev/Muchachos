@@ -611,9 +611,9 @@ MonoBehaviour:
     m_ActionName: Player/Block[/Keyboard/z]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7748191167678233771}
-        m_TargetAssemblyTypeName: P1v2_Movement, Assembly-CSharp
-        m_MethodName: OnTest
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: OnPause
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -623,8 +623,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: e71e277c-4af9-498f-b1c9-a42baf27c081
-    m_ActionName: Player/Test[/Keyboard/t]
+    m_ActionId: ebf78390-368c-4795-9f58-eb73f94a16b3
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

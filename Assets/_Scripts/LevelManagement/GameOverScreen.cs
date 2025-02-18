@@ -31,10 +31,13 @@ public class GameOverScreen : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-
+    public void MyDebug()
+    {
+        Debug.Log("debug");
+    }
     public void SaintsBlessing()
 	{
-        
+        Debug.Log("Saints blessing");
         player.GetComponent<Animator>().ResetTrigger(AnimationString.hit);
 		player.GetComponent<Animator>().SetTrigger(AnimationString.saint);        
 

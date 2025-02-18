@@ -51,9 +51,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Test",
+                    "name": "Pause",
                     "type": "Button",
-                    "id": "e71e277c-4af9-498f-b1c9-a42baf27c081",
+                    "id": "ebf78390-368c-4795-9f58-eb73f94a16b3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -283,12 +283,12 @@
                 },
                 {
                     "name": "",
-                    "id": "515e1b0b-b75b-4bd7-b62a-824ba0da625e",
-                    "path": "<Keyboard>/t",
+                    "id": "13140588-1f45-41c2-81d8-bbac0fdef5e7",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Test",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -716,6 +716,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "769fb10c-670b-46ee-a563-49cfec20c63e",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b1e2c4aa-2777-4294-90ad-5d23966440d1",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
