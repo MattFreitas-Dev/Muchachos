@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4474816773898941528, guid: 05c53a1e5f6afc2459df591339c4cd5d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.380332
+      value: -3.6
       objectReference: {fileID: 0}
     - target: {fileID: 4474816773898941528, guid: 05c53a1e5f6afc2459df591339c4cd5d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20504,7 +20504,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \n\u2191\n          \u2190\u2193\u2192\nto move"
+  m_text: "Press \n          \u2190\u2192\nto move"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c26b6c26468761f4994e511fbf027898, type: 2}
   m_sharedMaterial: {fileID: -8440670766541959401, guid: c26b6c26468761f4994e511fbf027898, type: 2}
@@ -30171,7 +30171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4474816773898941528, guid: 05c53a1e5f6afc2459df591339c4cd5d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.380332
+      value: -3.6
       objectReference: {fileID: 0}
     - target: {fileID: 4474816773898941528, guid: 05c53a1e5f6afc2459df591339c4cd5d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30232,7 +30232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4474816773898941528, guid: 05c53a1e5f6afc2459df591339c4cd5d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.0546837
+      value: -6.6
       objectReference: {fileID: 0}
     - target: {fileID: 4474816773898941528, guid: 05c53a1e5f6afc2459df591339c4cd5d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34255,7 +34255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8167769963947485661, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.94
+      value: -5.7
       objectReference: {fileID: 0}
     - target: {fileID: 8167769963947485661, guid: bce209fe52b995a4e8b87b3658cab7f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34538,6 +34538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightBandit
       objectReference: {fileID: 0}
+    - target: {fileID: 2852313862008971878, guid: 05c53a1e5f6afc2459df591339c4cd5d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4474816773898941528, guid: 05c53a1e5f6afc2459df591339c4cd5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.86
@@ -34650,11 +34654,11 @@ SceneRoots:
   - {fileID: 2338008558848295212}
   - {fileID: 246085755}
   - {fileID: 3328182946802262601}
-  - {fileID: 7050223012041733395}
   - {fileID: 4939455991920946506}
   - {fileID: 1682586547}
   - {fileID: 2141242882}
   - {fileID: 219833209}
+  - {fileID: 7050223012041733395}
   - {fileID: 1490322341}
   - {fileID: 37198627}
   - {fileID: 1394965906}
