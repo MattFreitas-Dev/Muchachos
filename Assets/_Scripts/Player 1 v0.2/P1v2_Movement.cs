@@ -74,7 +74,7 @@ public class P1v2_Movement : MonoBehaviour
 	public bool IsMoving
     {
         get
-        {
+        {            
          	return _isMoving;			
         }
         private set
