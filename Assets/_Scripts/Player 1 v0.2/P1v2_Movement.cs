@@ -14,10 +14,13 @@ public class P1v2_Movement : MonoBehaviour
 	public float jumpImpulse = 6f;
     public float comboTimer = 5f;
     public float cdTimer = 3f;
-    [SerializeField]
+	public int blessings = 3;
+    public float footStepSpeed = 0.5f;
+
+	[SerializeField]
     private float comboTimerValue, cdTimerValue;
     private int cc = 0;
-    public int blessings = 3;
+    private bool playinFootsteps = false;
 
 	private Vector2 moveInput;
 	Rigidbody2D rb;
@@ -81,6 +84,8 @@ public class P1v2_Movement : MonoBehaviour
         {
             _isMoving = value;
             animator.SetBool(AnimationString.isMoving, value);
+            //playinFootsteps = value;
+            StartFootstep(value);
         }
     }
 
@@ -198,4 +203,21 @@ public class P1v2_Movement : MonoBehaviour
         animator.speed = speed;
         return animator.speed;
     }
+
+    void StartFootstep(bool value)
+    {
+        playinFootsteps = value;
+        if(playinFootsteps == true)
+        {
+            InvokeRepeating(nameof(PlayFootStep), 0f, footStepSpeed);
+        }
+        else if(playinFootsteps == false)
+        {
+            CancelInvoke(nameof(PlayFootStep));
+        }
+    }
+    void PlayFootStep()
+    {
+		SoundEffectManager.Play("Walk", true);
+	}
 }
