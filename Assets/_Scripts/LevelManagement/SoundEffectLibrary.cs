@@ -18,7 +18,7 @@ public class SoundEffectLibrary : MonoBehaviour
 		soundDictionary = new Dictionary<string, List<AudioClip>> ();
         foreach(SoundEffectGroup soundEffectGroup in soundEffectGroups)
         {
-            soundDictionary[soundEffectGroup.name] = soundEffectGroup.audioClips;
+            soundDictionary[soundEffectGroup.name] = soundEffectGroup.audioClips;            
         }
 	}
 

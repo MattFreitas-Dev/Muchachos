@@ -1338,7 +1338,7 @@ MonoBehaviour:
     minPitch: 0
     maxPitch: 0
     audioClips:
-    - {fileID: 8300000, guid: d654174ef194bd7479bf4b8d8f753318, type: 3}
+    - {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
 --- !u!82 &594866681
 AudioSource:
   m_ObjectHideFlags: 0
