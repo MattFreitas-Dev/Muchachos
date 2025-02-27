@@ -65,7 +65,8 @@ public class Damageable : MonoBehaviour
                 col.enabled = false;
                 rb.simulated = false;
                 transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
-                if (gameObject.tag == "Player")
+				SoundEffectManager.Play("Death", true);
+				if (gameObject.tag == "Player")
                 {
                     id.DeathOnCall();                    
                 }

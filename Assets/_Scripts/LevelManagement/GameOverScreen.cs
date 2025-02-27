@@ -39,9 +39,10 @@ public class GameOverScreen : MonoBehaviour
 	{
         Debug.Log("Saints blessing");
         player.GetComponent<Animator>().ResetTrigger(AnimationString.hit);
-		player.GetComponent<Animator>().SetTrigger(AnimationString.saint);        
+		player.GetComponent<Animator>().SetTrigger(AnimationString.saint);
+		SoundEffectManager.Play("Revive");
 
-        player.GetComponent<Damageable>()._isAlive = true;
+		player.GetComponent<Damageable>()._isAlive = true;
 		player.GetComponent<Damageable>()._health = player.GetComponent<Damageable>()._maxHealth;
 
         healthbar.SetHealth(player.GetComponent<Damageable>()._health); //UI
