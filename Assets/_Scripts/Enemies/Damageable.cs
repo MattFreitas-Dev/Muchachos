@@ -117,16 +117,19 @@ public class Damageable : MonoBehaviour
                     healthbar.SetHealth(_health);
                     isInvincible=true;
 					animator.SetTrigger(AnimationString.hit);
+					SoundEffectManager.Play("Hurt", true);
 				}
 				else if (IsAlive && !isInvincible && shield.isBlocking == true)
 				{
 					animator.SetTrigger(AnimationString.blocked);
+					SoundEffectManager.Play("Block", true);
 				}
 			}
             if(gameObject.tag == "Enemy")
             {
 				Health -= damage;
 				animator.SetTrigger(AnimationString.hit);
+				SoundEffectManager.Play("Hurt", true);
 			}			
         }        
     }

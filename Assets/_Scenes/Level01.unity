@@ -1302,15 +1302,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEffectGroups:
   - name: Walk
+    minPitch: 0
+    maxPitch: 0
     audioClips:
     - {fileID: 8300000, guid: f9a8ad1663b5ef24a8d0b3cd393e26c2, type: 3}
     - {fileID: 8300000, guid: 3facd1d11321dbd478976727d7b6d747, type: 3}
     - {fileID: 8300000, guid: a0bd935c9812e6544ba7f77672f4c4f9, type: 3}
     - {fileID: 8300000, guid: e9f5876d76e0f33448d573a0dad9b5c9, type: 3}
-  - name: 
-    audioClips: []
-  - name: 
-    audioClips: []
+  - name: PlayerAttack
+    minPitch: 0
+    maxPitch: 0
+    audioClips:
+    - {fileID: 8300000, guid: 52fa067c25c5c401b811eb86d142287e, type: 3}
+    - {fileID: 8300000, guid: b76357a42d03a4722afcba74c3073136, type: 3}
+  - name: Hurt
+    minPitch: 0
+    maxPitch: 0
+    audioClips:
+    - {fileID: 8300000, guid: 6e701bacdaa50425dbb6bc6758fe9f02, type: 3}
+    - {fileID: 8300000, guid: aa48101fd9bd24b82af88afb182a9bf5, type: 3}
+    - {fileID: 8300000, guid: 794be7c4bd9e64c9bbb9776937807a9e, type: 3}
+  - name: Block
+    minPitch: 0
+    maxPitch: 0
+    audioClips:
+    - {fileID: 8300000, guid: 72de2a353cacc46d3aad1d65f2599d2a, type: 3}
+    - {fileID: 8300000, guid: f3645d7388d9f4efc88a56c59b3a70d4, type: 3}
+    - {fileID: 8300000, guid: 07c38e0499aea4acd81b44991c0e4d07, type: 3}
+  - name: Death
+    minPitch: 0
+    maxPitch: 0
+    audioClips:
+    - {fileID: 8300000, guid: 7a39ba789208642ea9fda609aea157b6, type: 3}
+  - name: Revive
+    minPitch: 0
+    maxPitch: 0
+    audioClips:
+    - {fileID: 8300000, guid: d654174ef194bd7479bf4b8d8f753318, type: 3}
 --- !u!82 &594866681
 AudioSource:
   m_ObjectHideFlags: 0
@@ -34507,6 +34535,10 @@ PrefabInstance:
       value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 1994541546379133856, guid: c80f57ea3fb536a40a2de63cc4e1582b, type: 3}
+      propertyPath: m_Value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994541546379133856, guid: c80f57ea3fb536a40a2de63cc4e1582b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 594866679}
@@ -34533,6 +34565,10 @@ PrefabInstance:
     - target: {fileID: 3842707733985819913, guid: c80f57ea3fb536a40a2de63cc4e1582b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869187781591987906, guid: c80f57ea3fb536a40a2de63cc4e1582b, type: 3}
+      propertyPath: m_Value
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3869187781591987906, guid: c80f57ea3fb536a40a2de63cc4e1582b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target

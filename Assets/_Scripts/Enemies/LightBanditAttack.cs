@@ -14,10 +14,14 @@ public class LightBanditAttack : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		Damageable damageable = collision.GetComponent<Damageable>();
+		Damageable damageable = collision.GetComponent<Damageable>();		
 
 		if (damageable != null)
 		{
+			if (gameObject.tag == "EnemyHitBox")
+				{
+					SoundEffectManager.Play("PlayerAttack", true);
+				}			
 			damageable.Hit(attackDamage);
 		}
 	}

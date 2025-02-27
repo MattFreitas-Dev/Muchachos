@@ -38,7 +38,7 @@ public class SoundEffectManager : MonoBehaviour
 		{
 			if (randomPitch)
 			{
-				randomPitchAudioSource.pitch = Random.Range(1f, 1.5f);
+				randomPitchAudioSource.pitch = Random.Range(1.0f, 1.5f);
 				randomPitchAudioSource.PlayOneShot(audioClip);
 			}
 			else

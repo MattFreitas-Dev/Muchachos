@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 public class P1v2_Movement : MonoBehaviour
 {
@@ -84,9 +85,8 @@ public class P1v2_Movement : MonoBehaviour
         {
             _isMoving = value;
             animator.SetBool(AnimationString.isMoving, value);
-            //playinFootsteps = value;
-            StartFootstep(value);
-        }
+			StartFootstep(value);
+		}
     }
 
     public bool CanMove {  
@@ -131,7 +131,7 @@ public class P1v2_Movement : MonoBehaviour
 
         cdTimerValue -= Time.deltaTime;
         comboTimerValue -= Time.deltaTime;
-		animator.SetFloat(AnimationString.comboTimer, comboTimerValue);
+		animator.SetFloat(AnimationString.comboTimer, comboTimerValue);		
 	}
 
 	public void OnMove(InputAction.CallbackContext context)
@@ -159,7 +159,8 @@ public class P1v2_Movement : MonoBehaviour
         if(context.started && touchingDirections.IsGrounded && CanMove)
         {
             animator.SetTrigger(AnimationString.jump);
-            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+			StartFootstep(false);
+			rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
     }
 
@@ -168,7 +169,8 @@ public class P1v2_Movement : MonoBehaviour
         if (context.started & cdTimerValue <= 0f)
         {
             animator.SetTrigger(AnimationString.attack);
-            cdTimerValue = cdTimer;
+			SoundEffectManager.Play("PlayerAttack", true);
+			cdTimerValue = cdTimer;
             comboTimerValue = comboTimer;
             cc++;
 			if (cc > 3)

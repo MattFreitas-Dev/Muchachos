@@ -8,7 +8,7 @@ public class SoundEffectLibrary : MonoBehaviour
     [SerializeField] private SoundEffectGroup[] soundEffectGroups;
     private Dictionary<string, List<AudioClip>> soundDictionary;
 
-    void Awake()
+	void Awake()
     {
         InitiateDictionary();
     }
@@ -39,6 +39,8 @@ public class SoundEffectLibrary : MonoBehaviour
 [System.Serializable]
 public struct SoundEffectGroup
 {
-    public string name;
-    public List<AudioClip> audioClips;
+	public string name;
+	public float minPitch;
+	public float maxPitch;	
+    public List<AudioClip> audioClips;    
 }
