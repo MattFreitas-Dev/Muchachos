@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using UnityEditor.IMGUI.Controls;
-using TMPro.EditorUtilities;
 using TMPro;
 
 public class LevelManager : MonoBehaviour
