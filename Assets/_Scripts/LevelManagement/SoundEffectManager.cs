@@ -21,7 +21,7 @@ public class SoundEffectManager : MonoBehaviour
 			audioSource = audioSources[0];
 			randomPitchAudioSource = audioSources[1];
 			soundEffectLibrary = GetComponent<SoundEffectLibrary>();
-			DontDestroyOnLoad(gameObject);
+			//DontDestroyOnLoad(gameObject);
 		}
 		else
 			Destroy(gameObject);
